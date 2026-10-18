@@ -1,42 +1,35 @@
-# money-manager
+# Money Manager
 
-This template should help get you started developing with Vue 3 in Vite.
+A spending dashboard for Excel exports from a money-tracking app. Upload an `.xlsx` file and get charts and insights about your spending habits, filtered by category, account, date range or a search on notes.
 
-## Recommended IDE Setup
+Everything runs in the browser: the file is never uploaded anywhere. The last file you loaded is kept in the browser's local storage so the dashboard is still there after a reload (use **Clear** to remove it).
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## Expected file format
 
-## Recommended Browser Setup
+One sheet with a header row like:
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+| Period | Accounts | Category | Subcategory | Note | EUR | Income/Expense | Description | Amount | Currency | Accounts |
+|---|---|---|---|---|---|---|---|---|---|---|
 
-## Type Support for `.vue` Imports in TS
+- **Period**: date and time of the transaction
+- **EUR** (the column before *Income/Expense*): the amount in your base currency, used for all totals
+- **Income/Expense**: `Exp.` or `Income`. Transfers are ignored.
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+## What the dashboard shows
 
-## Customize configuration
+- Totals for spending, investments, income, net savings with the savings rate, monthly average and typical purchase, compared with the previous period of the same length
+- Income vs spending over time (per day, week or month depending on the range)
+- Spending by category (click a bar to show only that category) and the category mix over time
+- Top places (from the Note column), spending by day of week and by account
+- Highlights written from your data, and recurring payments it detects
+- A sortable transactions table
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+Categories with names like *investment* or *savings* are counted as savings by default rather than spending. Turn off **Count investments as savings** to count them as spending.
 
-## Project Setup
+## Development
 
 ```sh
 npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
+npm run dev      # start the dev server
+npm run build    # type-check and build for production
 ```
