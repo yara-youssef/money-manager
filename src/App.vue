@@ -6,6 +6,7 @@ import { addDays, addMonths, daysBetween, endOfMonth, formatDay, formatMonth, pi
 import { recurringPayments, sum, totalsBy } from '@/lib/stats'
 import { money, pct, setCurrency } from '@/lib/format'
 import { palette } from '@/lib/theme'
+import AppLogo from '@/components/AppLogo.vue'
 import UploadZone from '@/components/UploadZone.vue'
 import MultiSelect, { type Option } from '@/components/MultiSelect.vue'
 import ChartCard from '@/components/ChartCard.vue'
@@ -355,7 +356,7 @@ watch(
   <div class="app">
     <header class="top">
       <div class="brand">
-        <span class="logo" aria-hidden="true">€</span>
+        <AppLogo />
         <div>
           <h1>Money Manager</h1>
           <p v-if="dataset" class="muted small">

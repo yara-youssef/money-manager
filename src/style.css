@@ -152,18 +152,6 @@ button:focus-visible {
   gap: 12px;
   min-width: 0;
 }
-.logo {
-  display: grid;
-  place-items: center;
-  width: 36px;
-  height: 36px;
-  flex: none;
-  border-radius: 10px;
-  background: var(--accent);
-  color: #fff;
-  font-weight: 700;
-  font-size: 18px;
-}
 .top-actions {
   display: flex;
   gap: 8px;
