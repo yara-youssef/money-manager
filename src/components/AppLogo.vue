@@ -1,5 +1,9 @@
+<script setup lang="ts">
+const src = `${import.meta.env.BASE_URL}logo.svg`
+</script>
+
 <template>
-  <img class="logo" src="/logo.svg" alt="" width="36" height="36" />
+  <img class="logo" :src="src" alt="" width="36" height="36" />
 </template>
 
 <style scoped>

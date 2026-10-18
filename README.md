@@ -33,3 +33,8 @@ npm install
 npm run dev      # start the dev server
 npm run build    # type-check and build for production
 ```
+
+## Deployment
+
+Every push to `main` builds the app and publishes it to GitHub Pages (`.github/workflows/deploy.yml`):
+https://yara-youssef.github.io/money-manager/
