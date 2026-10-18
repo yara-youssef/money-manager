@@ -13,7 +13,8 @@ import { moneyShort, money } from './format'
 Chart.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend)
 Chart.defaults.font.family = 'system-ui, -apple-system, "Segoe UI", sans-serif'
 Chart.defaults.font.size = 12
-Chart.defaults.animation = { duration: 250 }
+// Merge rather than assign: replacing the object drops Chart.js's animation defaults and breaks updates.
+Chart.defaults.set('animation', { duration: 250 })
 
 export const barStyle = {
   borderRadius: 4,
